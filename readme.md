@@ -60,3 +60,8 @@ composer update
 ```
 phpunit
 ```
+
+##Usage
+the ip goes in the end of the Url it is possible to insert there other 
+
+YOURSERVER.com/locationByIP/81.0.3.202

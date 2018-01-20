@@ -66,13 +66,18 @@ phpunit
 ```
 
 ##Usage
-the ip goes in the end of the Url it is possible to insert there other 
+the ip goes in the end of the Url it is possible to insert other 
 
 YOURSERVER_ADRESS/locationByIP/81.0.3.202
 
+The endpoint should throw a msg as bellow
+```
+{"id":1,"min_ip_range":"1.0.0.0","max_ip_range":"1.0.0.255","min_int_ip":16777216,"max_int_ip":16777471,"country_code":"AU","country_name":"Australia","created_at":"2018-01-20 17:00:45","updated_at":"2018-01-20 23:14:20"}
+```
+
 ##Comments 
 Why i choosed the Crontab approach?
-It allows to update with determined periocity the table without having to show the maintenance page.
+It allows to update with determined periocity the table without having down time.
 
 Why Laravel ?
 There is no reason except for curiosity and learning purposes.

@@ -14,12 +14,13 @@ class CreateGeoIpContriesTable extends Migration
     {
         Schema::create('geo_ip_countries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('min_ip_range');
-            $table->string('max_ip_range');
+            $table->integer('min_ip_range');
+            $table->integer('max_ip_range');
             $table->bigInteger('min_int_ip');
             $table->bigInteger('max_int_ip');
             $table->string('country_code', 2);
             $table->string('country_name', 60);
+            $table->timestamps();
         });
     }
 

@@ -10,12 +10,20 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Http\Controllers\APIController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/locationByIP', 'CountryIpController@index');
+Route::get('/locationByIP/{ip}', function($ip) {
+    $countryIpController = new APIController();
+    return $countryIpController->getCountryByIp($ip);
+});
+
+
+Route::get('/populatedatabase', 'APIController@PopulateDatabaseFromCsv');
+
 
 /*
 |--------------------------------------------------------------------------

@@ -9,7 +9,17 @@ class APIController extends Controller
 {
     public function getCountryByIp($requestedIp)
     {
+
+        if(!config('Api.ApiStatus')){
+
+            return response()->json()->setStatusCode(503, 'Maintenance, please return later');
+        }
+
         $requestedIp = ip2long($requestedIp);
+        if (filter_var( $requestedIp,  FILTER_VALIDATE_IP)) {
+            return response()->json()->setStatusCode(400, 'please correct the ip address');
+        }
+
 
         $country = DB::table('geo_ip_countries')
             ->where(
@@ -20,7 +30,7 @@ class APIController extends Controller
             )->get();
 
         if (count($country) <= 0) {
-            return response()->json()->setStatusCode(404, 'Not available.');
+            return response()->json()->setStatusCode(404, 'country not available.');
         }
 
         return json_encode($country[0]);

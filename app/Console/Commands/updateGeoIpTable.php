@@ -42,7 +42,8 @@ class updateGeoIpTable extends Command
      */
     public function handle()
     {
-        $url = 'http://geolite.maxmind.com/download/geoip/database/GeoIPCountryCSV.zip';
+
+        $url = config('Api.file_url');
 
         $content = file_get_contents($url);
         file_put_contents('tmp.zip', $content);
@@ -99,5 +100,7 @@ class updateGeoIpTable extends Command
             }
             fclose($handle);
         }
+        fopen('tmp/GeoIPCountryWhois.csv', 'w');
+        fopen('tmp.zip', 'w');
     }
 }

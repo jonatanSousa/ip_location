@@ -1,9 +1,16 @@
 Geo Ip Test
 =============================
 
+By default the config file (\config\Api.php) has the option
+ "ApiStatus" set to “1”,  this works as an on/off 
+ button for the endpoint to work. 
+ While the first  database update it should
+  be set to “0” for the api to show 
+  updating database code message.
+
 ##Installation
 
-Requirements:
+##It  will be needed
 - Appache
 - Composer 
 - PHP 7 or higher
@@ -53,9 +60,6 @@ php artisan command:populateGeoIpDB
 ##Unit Testing 
 
 Unit tests are using Guzzle there for it should be instaled with this comand 
-```
-composer update
-```
 
 ```
 phpunit
@@ -64,4 +68,11 @@ phpunit
 ##Usage
 the ip goes in the end of the Url it is possible to insert there other 
 
-YOURSERVER.com/locationByIP/81.0.3.202
+YOURSERVER_ADRESS/locationByIP/81.0.3.202
+
+##Comments 
+Why i choosed the Crontab approach?
+It allows to update with determined periocity the table without having to show the maintenance page.
+
+Why Laravel ?
+There is no reason except for curiosity and learning purposes.

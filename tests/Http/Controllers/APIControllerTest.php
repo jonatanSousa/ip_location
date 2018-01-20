@@ -19,7 +19,7 @@ class APIControllerTest extends TestCase
      */
     public function testGetCountryByIp_responseOk()
     {
-        $response = $this->client->request('GET', 'http://geoip.dev/locationByIP/81.0.3.244');
+        $response = $this->client->request('GET', 'localhost/locationbyip/81.0.3.244');
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -27,7 +27,7 @@ class APIControllerTest extends TestCase
     public function testGetCountryByIp_responseNotOk()
     {
         try {
-            $response = $this->client->request('GET', 'http://geoip.dev/locationByIP/81.0.3.300');
+            $response = $this->client->request('GET', 'localhost/locationbyip/81.0.3.300');
             }
             catch (GuzzleHttp\Exception\ClientException $e) {
                 $response = $e->getResponse();
@@ -39,7 +39,7 @@ class APIControllerTest extends TestCase
     public function testGetCountryByIp_confirmCountry()
     {
         //test country norway
-        $response = $this->client->request('GET', 'http://geoip.dev/locationByIP/2.151.255.255');
+        $response = $this->client->request('GET', 'localhost/locationbyip/2.151.255.255');
 
         $body = json_decode($response->getBody());
 

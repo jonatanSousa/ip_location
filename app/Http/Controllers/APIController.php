@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+Use geoIpCountry;
 
 class APIController extends Controller
 {

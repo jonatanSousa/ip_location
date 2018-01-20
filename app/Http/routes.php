@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/locationByIP/{ip}', function($ip) {
+Route::get('/locationbyip/{ip}', function($ip) {
     $countryIpController = new APIController();
     return $countryIpController->getCountryByIp($ip);
 });

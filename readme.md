@@ -29,25 +29,22 @@ At the the project root path and make a **.env.example** file a copy named **.en
 Change the following parameters:
 
 ```
-. . .
-
-APP_URL=http://<your URL, could be localhost>
-
 DB_CONNECTION=mysql
 DB_HOST=<your DB Host>
 DB_PORT=3306
 DB_DATABASE=<your database name>
 DB_USERNAME=<your database username>
 DB_PASSWORD=<your database password>
+```
 
 
 To create the table execute this command on the project directory 
+
 ```
 php artisan migrate
 ```
 
 To populate the database there this console task which can be later used as cron job to update the table periodicly 
-
 ```
 php artisan command:populateGeoIpDB
 ```
@@ -58,4 +55,8 @@ php artisan command:populateGeoIpDB
 Unit tests are using Guzzle there for it should be instaled with this comand 
 ```
 composer update
+```
+
+```
+phpunit
 ```

@@ -1,7 +1,7 @@
 Geo Ip Test
 =============================
 
-###configuration
+#Configuration
 By default, the config file (\config\Api.php) has the option
  "ApiStatus" set to “1”,  this works as an on/off 
  button for the endpoint to work. 

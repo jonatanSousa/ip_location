@@ -9,7 +9,7 @@ By default, the config file (\config\Api.php) has the option
   be set to “0” for the api to show 
   updating database code message.
 
-###Installation
+##Installation
 
 ###The server must have:
 - Appache
